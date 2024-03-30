@@ -12,3 +12,16 @@
 .btn-form:hover{
     background-color: #031ff3;
 }
+
+@media screen and (max-width :800px) {
+    .btn-form{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width : 550px) {
+    .btn-form{
+        width: 110px;
+    }
+    
+}

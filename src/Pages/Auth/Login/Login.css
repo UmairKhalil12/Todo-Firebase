@@ -7,32 +7,47 @@
 }
 
 .form-div {
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
     position: relative;
 }
 
 .form-input {
-    padding-left: 3%;
+    padding-left: 12%;
 }
 
 .email-input-icon,
 .password-input-icon,
 .password-visibility-icon {
-    position: absolute;
-
+    position:relative;
 }
 
 .email-input-icon {
-    top: 20.5%;
-    left: 36.75%;
+    top: -180px;
+    left: -110px;
 }
 
 .password-input-icon {
-    top: 62%;
-    left: 36.75%;
+    top: -90px;
+    left: -133px;
 }
 
 .password-visibility-icon {
-    right: 36.75%;
-    top: 62.5%;
+    right: -145px;
+    top: -90px;
+}
+
+@media screen and (max-width : 800px) {
+    .email-input-icon {
+        left: -85px;
+    }
+    .password-input-icon {
+        left: -108px;
+    }
+    .password-visibility-icon {
+        right: -115px;
+    }
+    
+
 }

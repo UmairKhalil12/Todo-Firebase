@@ -1,0 +1,11 @@
+.todoDiv-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trash-edit-todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
