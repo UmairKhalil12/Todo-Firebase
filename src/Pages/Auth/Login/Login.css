@@ -1,0 +1,38 @@
+.main-form-div {
+    text-align: center;
+}
+
+.main-form-div div {
+    margin: 1rem;
+}
+
+.form-div {
+    margin: 0 auto;
+    position: relative;
+}
+
+.form-input {
+    padding-left: 3%;
+}
+
+.email-input-icon,
+.password-input-icon,
+.password-visibility-icon {
+    position: absolute;
+
+}
+
+.email-input-icon {
+    top: 20.5%;
+    left: 36.75%;
+}
+
+.password-input-icon {
+    top: 62%;
+    left: 36.75%;
+}
+
+.password-visibility-icon {
+    right: 36.75%;
+    top: 62.5%;
+}

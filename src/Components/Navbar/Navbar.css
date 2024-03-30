@@ -1,0 +1,44 @@
+/* Navbar.css */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: whitesmoke;
+    padding: 10px;
+    
+  }
+  
+  .navbar-ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  .navbar-li {
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+  }
+  
+  .navbar-a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+  
+  .navbar-a:hover {
+    color: plum;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .navbar-ul button{
+    font-size: large;
+  }
+  
+ 

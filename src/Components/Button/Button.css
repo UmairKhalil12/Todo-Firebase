@@ -1,0 +1,14 @@
+.btn-form{
+    background-color: #4552B1;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    font-size:larger ;
+    cursor: pointer;
+}
+
+.btn-form:hover{
+    background-color: #031ff3;
+}
