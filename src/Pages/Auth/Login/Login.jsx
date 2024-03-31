@@ -11,6 +11,8 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../Firebase/firebase';
+import { toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -28,17 +30,20 @@ export default function Login() {
         if (email && password) {
             try {
                 await signInWithEmailAndPassword(auth, email, password);
-                window.alert("Sign in succesfull");
+                //window.alert("Sign in successfull");
+                toast.success("Sign in successfull"); 
                 navigate('/home');
             }
             catch (error) {
                 console.log("error logging in");
-                window.alert("Error loggin in");
+                //window.alert("Error loggin in");
+                toast.error("Error Logging in");
             }
 
         }
         else {
-            window.alert("All fields are required");
+            //window.alert("All fields are required");
+            toast.info("All fields are required");
         }
     }
 
@@ -47,7 +52,7 @@ export default function Login() {
             <Navbar />
             <div className='main-form-div'>
                 <h1>Login Page</h1>
-                <div className='form-div'>
+                <div className='auth-form-div'>
                     <form onSubmit={Login}>
                         <Label text='Enter your Email' />
                         <InputForm

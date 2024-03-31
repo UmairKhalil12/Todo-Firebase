@@ -6,7 +6,7 @@
     margin: 1rem;
 }
 
-.form-div {
+.auth-form-div {
     /* margin: 0 auto; */
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@
 .email-input-icon,
 .password-input-icon,
 .password-visibility-icon {
-    position:relative;
+    position: relative;
 }
 
 .email-input-icon {
@@ -42,12 +42,31 @@
     .email-input-icon {
         left: -85px;
     }
+
+    .password-input-icon {
+        left: -108px;
+    }
+
+    .password-visibility-icon {
+        right: -115px;
+    }
+
+}
+
+@media screen and (max-width : 500px) {
+    /* .email-input-icon {
+        left: -82px;
+    }
     .password-input-icon {
         left: -108px;
     }
     .password-visibility-icon {
         right: -115px;
+    } */
+
+
+    .form-input {
+        padding-left: 13.5%;
     }
-    
 
 }

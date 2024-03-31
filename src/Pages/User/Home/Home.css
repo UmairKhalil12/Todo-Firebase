@@ -1,14 +1,10 @@
 .form-div{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-direction: column;
+    width: 50%;
     margin: 0 auto;
     margin-top: 5%;
-    width: 50%;
-}
-
-.main-form{
-    /* margin: 0 auto; */
 }
 
 .input-todo{
@@ -24,6 +20,11 @@
 .add-todo-icon{
     color:  #4552B1;
     cursor: pointer;  
+}
+
+.add-todo-button{
+    background: none;
+    border: none;
 }
 
 .add-todo-icon:hover{

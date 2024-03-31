@@ -12,6 +12,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../../../Firebase/firebase';
 import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Signup() {
     const [email, setEmail] = useState('');
@@ -24,8 +26,8 @@ export default function Signup() {
     }
     const initialUserTodo = [
         {
-            task: '',
-            completed: '',
+            task: null,
+            completed: null,
         }
     ]
 
@@ -41,17 +43,20 @@ export default function Signup() {
         if (email && password) {
             await createUserWithEmailAndPassword(auth, email, password).then((userCredentials) => {
                 console.log(userCredentials, 'user cred inside signup');
-                window.alert("User created successfully");
+                // window.alert("User created successfully");
+                toast.success("User created successfully");
                 navigate('/home');
                 createDb(userCredentials.user.uid);
             })
                 .catch((error) => {
                     console.log('error creating user', error);
-                    window.alert('error creating user', error);
+                    //window.alert('error creating user', error);
+                    toast.success("error creating user");
                 })
         }
         else {
-            window.alert("All fields are required");
+            //window.alert("All fields are required");
+            toast.info("All fields are required");
         }
 
     };
@@ -61,7 +66,7 @@ export default function Signup() {
             <Navbar />
             <div className='main-form-div'>
                 <h1>Signup Page</h1>
-                <div className='form-div'>
+                <div className='auth-form-div'>
                     <form onSubmit={SignupOnClick}>
                         <Label text='Enter your Email' />
                         <InputForm
