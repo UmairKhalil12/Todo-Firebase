@@ -26,3 +26,9 @@
     }
     
 }
+
+@media screen and (max-width : 400px) {
+    .btn-form{
+        width: 90px;
+    }
+}

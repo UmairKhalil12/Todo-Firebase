@@ -70,3 +70,10 @@
     }
 
 }
+
+@media screen and (max-width : 400px) {
+    .email-input-icon {
+        top: -179px;
+    }
+    
+}
