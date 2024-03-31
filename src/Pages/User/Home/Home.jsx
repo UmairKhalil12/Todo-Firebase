@@ -6,6 +6,7 @@ import TodoDiv from '../../../Components/TodoDiv/TodoDiv';
 import { arrayUnion, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { db } from '../../../Firebase/firebase';
 import appStore from '../../../zustand/appStore';
+import Spinner from '../../../Components/Spinner/Spinner';
 
 
 // const Todos = [
@@ -19,6 +20,7 @@ export default function Home() {
   const [input, setInput] = useState();
   const [docId, setDocId] = useState('');
   const [todos, setTodos] = useState([]);
+  const [loading , setLoading] = useState(true); 
   //const [completedTodo , setCompletedTodo] = useState(); 
 
   const { userInfo } = appStore((state) => ({ userInfo: state.userInfo }));
@@ -35,10 +37,12 @@ export default function Home() {
         setDocId(doc.id);
       });
       setTodos(Usertodos);
+      setLoading(false);
 
       return Usertodos;
     } catch (error) {
       console.error("Error getting documents: ", error);
+      setLoading(false);
       return [];
     }
   }
@@ -93,7 +97,7 @@ export default function Home() {
   const deleteTodo = async (index) => {
     try {
       const updatedTodos = [...todos];
-      updatedTodos.pop(index);
+      updatedTodos.splice(index, 1);
 
       const todoRef = doc(db, 'todos', docId);
       await updateDoc(todoRef, {
@@ -117,6 +121,10 @@ export default function Home() {
   const completedTasks = completedTodos();
 
   // console.log(completedTodo);
+
+  if(loading){
+    return <Spinner /> 
+  }
 
   return (
     <>
@@ -151,7 +159,7 @@ export default function Home() {
           })}
           <p>You have {todos.length-1} todo(s)</p>
           <p><i>Completed : {completedTasks.length} </i></p>
-          <p><i>Not Completed : {todos.length-1 - completedTasks.length} </i></p>
+          <p><i>Not Completed : {todos.length -1 - completedTasks.length} </i></p>
         </div>
 
       </div>

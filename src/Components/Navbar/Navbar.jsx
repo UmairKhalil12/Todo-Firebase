@@ -5,6 +5,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../Firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import appStore from '../../zustand/appStore';
+import { toast } from 'react-toastify';
 
 
 function Navbar() {
@@ -25,6 +26,7 @@ function Navbar() {
   const LogOut = async () => {
     try {
       await signOut(auth)
+      toast.success('Logged out sucessfully');
     } catch (error) {
       console.error(error);
     }
@@ -35,7 +37,8 @@ function Navbar() {
       <div >
         <nav className="navbar" >
           <ul className='navbar-ul'>
-            <li className='navbar-li'><p className='navbar-a' href="/" onClick={HomeClick}>Home</p></li>
+            { user ? <li className='navbar-li'><p className='navbar-a' href="/" onClick={HomeClick}>Home</p></li> : 
+           <li className='navbar-li'><p className='navbar-a' href="/" onClick={HomeClick}>Login to Start Please</p></li> }
             {user ?
               <Button text="Logout" onClick={LogOut} />
               :

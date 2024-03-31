@@ -21,7 +21,7 @@ export default function TodoDiv({ todo, toggleComplete, deleteTodo, toggleIndex 
         </div>
 
         <div className='trash-edit-todo'>
-          <FaRegTrashAlt size={25} onClick={() => { deleteTodo(todo.id) }} />
+          <FaRegTrashAlt size={25} onClick={() => { deleteTodo(toggleIndex) }} />
         </div>
       </div>
       <hr />

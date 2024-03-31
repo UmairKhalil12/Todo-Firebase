@@ -3,10 +3,11 @@
     color: white;
     border:none;
     border-radius: 5px;
-    width: 300px;
+    width: auto;
     height: 30px;
     font-size:larger ;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-form:hover{
